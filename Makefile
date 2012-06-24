@@ -26,8 +26,6 @@ build:
 	#@node dev/build
 	@echo "Compiling mustache templates...             ${CHECK} Done"
 	@cp dev/img/* prod/assets/img/
-	@open -a /Applications/ImageOptim.app prod/assets/img/*
-	@rm prod/assets/img/*.png~
 	@echo "Moving & optimizing images...               ${CHECK} Done"
 	@cat dev/js/*.js > prod/assets/js/main.js
 	@uglifyjs prod/assets/main.js > prod/assets/main.min.js
