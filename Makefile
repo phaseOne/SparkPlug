@@ -20,8 +20,8 @@ build:
 	@echo "Creating directories...                     ${CHECK} Done"
 	@jshint dev/js/* --config dev/js/.jshintrc
 	@echo "Running JSHint on javascript...             ${CHECK} Done"
-	@recess --compile ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
-	@recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+	@recess --compress ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
+	@recess --compress ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
 	@echo "Compiling LESS with Recess...               ${CHECK} Done"
 	#@node dev/build
 	@echo "Compiling mustache templates...             ${CHECK} Done"
@@ -39,8 +39,8 @@ build:
 	@echo "Bootstrap successfully built at ${DATE}."
 	@echo "${HR}\n"
 	@echo "Thanks for using Bootstrap,"
-	@echo "<3 @mdo and @fat\n"
-	@echo "and Evan Bovie"
+	@echo "<3 @mdo and @fat"
+	@echo "and Evan Bovie\n"
 
 #
 # WATCH LESS FILES
