@@ -1,0 +1,6 @@
+{
+  "name": "SparkPlug-builder"
+, "version": "0.0.1"
+, "description": "build mustache files"
+, "dependencies": { "hogan.js": "2.x.x" }
+}

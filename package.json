@@ -1,0 +1,22 @@
+{
+    "name": "SparkPlug"
+  , "description": "A tool for designing static websites with Bootstrap, mustache, and less"
+  , "version": "0.1.0"
+  , "keywords": ["bootstrap", "css", "less", "mustache"]
+  , "homepage": "http://phaseone.github.com/sparkplug/"
+  , "author": "Evan Bovie <evan@bovie.me>"
+  , "scripts": { "ignite": "make" }
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/phaseone/sparkplug.git"
+  }
+  , "licenses": [
+    { "type": "EPL", "url": "http://www.opensource.org/licenses/eclipse-1.0.php" }
+  ]
+  , "dependencies": {
+      "uglify-js": "1.2.6"
+    , "jshint": "0.6.1"
+    , "recess": "1.0.3"
+    , "bootstrap": "2.x.x"
+  }
+}
