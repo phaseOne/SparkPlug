@@ -29,7 +29,6 @@ build:
 	@echo "Moving & optimizing images...               ${CHECK} Done"
 	@cat dev/js/*.js > prod/assets/js/main.js
 	@uglifyjs prod/assets/js/main.js > prod/assets/js/main.min.js
-	@rm prod/assets/js/main.js
 	@cat dev/js/bootstrap/*.js > prod/assets/js/bootstrap.js
 	@uglifyjs -nc prod/assets/js/bootstrap.js > prod/assets/js/bootstrap.min.tmp.js
 	@echo "/**\n* Bootstrap.js by @fat & @mdo\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > prod/assets/js/copyright.js
