@@ -16,12 +16,14 @@ build:
 	@echo "Building SparkPlug..."
 	@echo "This is a modified Bootstrap script"
 	@echo "${HR}\n"
+	@mkdir -p prod/assets/{img,js,css}
+	@echo "Creating directories...                     ${CHECK} Done"
 	@jshint dev/js/* --config dev/js/.jshintrc
 	@echo "Running JSHint on javascript...             ${CHECK} Done"
 	@recess --compile ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
 	@recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
 	@echo "Compiling LESS with Recess...               ${CHECK} Done"
-	@node dev/build
+	#@node dev/build
 	@echo "Compiling mustache templates...             ${CHECK} Done"
 	@cp dev/img/* prod/assets/img/
 	@open -ag /Applications/ImageOptim.app prod/assets/img/*
