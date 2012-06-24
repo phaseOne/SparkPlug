@@ -34,7 +34,7 @@ build:
 	@uglifyjs -nc prod/assets/js/bootstrap.js > prod/assets/js/bootstrap.min.tmp.js
 	@echo "/**\n* Bootstrap.js by @fat & @mdo\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > prod/assets/js/copyright.js
 	@cat prod/assets/js/copyright.js prod/assets/js/bootstrap.min.tmp.js > prod/assets/js/bootstrap.min.js
-	@rm prod/assets/js/copyright.js prod/assets/js/bootstrap.min.tmp.js
+	@rm prod/assets/js/main.js prod/assets/js/bootstrap.js prod/assets/js/copyright.js prod/assets/js/bootstrap.min.tmp.js
 	@echo "Compiling and minifying javascript...       ${CHECK} Done"
 	@echo "\n${HR}"
 	@echo "Bootstrap successfully built at ${DATE}."
