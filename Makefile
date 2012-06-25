@@ -23,7 +23,7 @@ build:
 	@recess --compress ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
 	@recess --compress ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
 	@echo "Compiling LESS with Recess...               ${CHECK} Done"
-	#@node dev/build
+	@node dev/build
 	@echo "Compiling mustache templates...             ${CHECK} Done"
 	@cp dev/img/* prod/assets/img/
 	@echo "Moving & optimizing images...               ${CHECK} Done"
