@@ -1,7 +1,7 @@
 {
     "name": "SparkPlug"
   , "description": "A tool for designing static websites with Bootstrap, mustache, and less"
-  , "version": "0.1.0"
+  , "version": "1.0.0"
   , "keywords": ["bootstrap", "css", "less", "mustache"]
   , "homepage": "http://phaseone.github.com/sparkplug/"
   , "author": "Evan Bovie <evan@bovie.me>"

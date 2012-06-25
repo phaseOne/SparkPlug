@@ -26,7 +26,7 @@ build:
 	@node dev/build
 	@echo "Compiling mustache templates...             ${CHECK} Done"
 	@cp dev/img/* prod/assets/img/
-	@echo "Moving & optimizing images...               ${CHECK} Done"
+	@echo "Moving images...                            ${CHECK} Done"
 	@cat dev/js/*.js > prod/assets/js/main.js
 	@uglifyjs prod/assets/js/main.js > prod/assets/js/main.min.js
 	@cat dev/js/bootstrap/*.js > prod/assets/js/bootstrap.js
