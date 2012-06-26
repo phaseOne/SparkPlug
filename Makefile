@@ -18,19 +18,20 @@ build:
 	@echo "${HR}\n"
 	@mkdir -p prod/assets/{img,js,css}
 	@echo "Creating directories...                     ${CHECK} Done"
-	@jshint dev/js/* --config dev/js/.jshintrc
+	@./node_modules/jshint/bin/hint dev/js/* --config dev/js/.jshintrc
 	@echo "Running JSHint on javascript...             ${CHECK} Done"
-	@recess --compress ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
-	@recess --compress ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+	@./node_modules/recess/bin/recess --compress ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
+	@./node_modules/recess/bin/recess --compress ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+	@./node_modules/recess/bin/recess --compress ./dev/less/main.less > ./prod/assets/css/main.css
 	@echo "Compiling LESS with Recess...               ${CHECK} Done"
 	@node dev/build
 	@echo "Compiling mustache templates...             ${CHECK} Done"
 	@cp dev/img/* prod/assets/img/
 	@echo "Moving images...                            ${CHECK} Done"
 	@cat dev/js/*.js > prod/assets/js/main.js
-	@uglifyjs prod/assets/js/main.js > prod/assets/js/main.min.js
+	@./node_modules/uglify-js/bin/uglifyjs prod/assets/js/main.js > prod/assets/js/main.min.js
 	@cat dev/js/bootstrap/*.js > prod/assets/js/bootstrap.js
-	@uglifyjs -nc prod/assets/js/bootstrap.js > prod/assets/js/bootstrap.min.tmp.js
+	@./node_modules/uglify-js/bin/uglifyjs -nc prod/assets/js/bootstrap.js > prod/assets/js/bootstrap.min.tmp.js
 	@echo "/**\n* Bootstrap.js by @fat & @mdo\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > prod/assets/js/copyright.js
 	@cat prod/assets/js/copyright.js prod/assets/js/bootstrap.min.tmp.js > prod/assets/js/bootstrap.min.js
 	@rm prod/assets/js/main.js prod/assets/js/bootstrap.js prod/assets/js/copyright.js prod/assets/js/bootstrap.min.tmp.js
@@ -43,9 +44,9 @@ build:
 	@echo "and Evan Bovie\n"
 
 #
-# WATCH LESS FILES
+# WATCH SparkPlug FILES
 #
 
 watch:
-	echo "Watching less files..."; \
-	watchr -e "watch('less/.*\.less') { system 'make' }"
+	echo "Watching files..."; \
+	watchr -e "watch('dev/.*/.*\.*') { system 'make' }"
