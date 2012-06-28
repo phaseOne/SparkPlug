@@ -16,6 +16,7 @@ build:
 	@echo "Building SparkPlug..."
 	@echo "This is a modified Bootstrap script"
 	@echo "${HR}\n"
+	@rm -rf prod
 	@mkdir -p prod/assets/{img,js,css}
 	@echo "Creating directories...                     ${CHECK} Done"
 	@./node_modules/jshint/bin/hint dev/js/* --config dev/js/.jshintrc
